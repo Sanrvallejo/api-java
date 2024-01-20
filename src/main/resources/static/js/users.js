@@ -16,10 +16,11 @@ async function loadUsers() {
         let usersList = '';
         for (let user of users) {
             let deleteButton = '<a href="#" onclick = "deleteUser('+ user.id +')"class="btn btn-danger btn-circle btn-sm"><i class="fas fa-trash"></i></a>';
+            let phone = user.phone == null ? '-' : user.phone;
             let userRaw = '<tr><td>'+user.username
                         +'</td><td>'+user.lastname
                         +'</td><td>'+user.email
-                        +'</td><td>'+user.phone
+                        +'</td><td>'+phone
                         +'</td><td>'+deleteButton+'</td></tr>';
             usersList += userRaw;
         }
